@@ -39,7 +39,7 @@ export function Setting() {
         >
           <motion.div style={{ scale }} className="h-full w-full">
             <PhotoFrame
-              src="/images/setting-forest.jpeg"
+              src="/images/figma-upscale-2.png"
               alt="A Cortina residence nestled among dense forest on the mountainside"
               className="h-full w-full"
             />

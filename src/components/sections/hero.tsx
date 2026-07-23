@@ -4,7 +4,7 @@ import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { PhotoFrame } from "@/components/photo-frame";
 
-const HERO_IMAGE = "/images/hero-aerial.jpeg";
+const HERO_IMAGE = "/images/reso-boost-figma.png";
 // Drop a stitched clip at /public/video/hero.mp4 and pass its path here to
 // swap the static hero image for a looping ambient background video.
 const HERO_VIDEO: string | undefined = undefined;
@@ -43,7 +43,7 @@ export function Hero() {
         ) : (
           <PhotoFrame
             src={HERO_IMAGE}
-            alt="Aerial view of a Cortina residence set among the forested Blue Ridge mountains"
+            alt="A Cortina residence framed by trees in the Blue Ridge mountains"
             className="h-full w-full"
             priority
             scrim="bottom"
