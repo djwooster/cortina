@@ -36,6 +36,10 @@ yarn-error.log*
 # vercel
 .vercel
 
+# reference material (not used by the app; see public/images for actual site assets)
+/actual-images
+/ui-inspo
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
