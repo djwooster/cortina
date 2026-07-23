@@ -6,6 +6,7 @@ import { LogoMark } from "@/components/logo-mark";
 
 const LINKS = [
   { href: "#residences", label: "Residences" },
+  { href: "#interiors", label: "Inside" },
   { href: "#plan", label: "Plan" },
   { href: "#setting", label: "Setting" },
   { href: "#contact", label: "Inquire" },
