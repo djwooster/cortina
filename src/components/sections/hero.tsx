@@ -82,7 +82,7 @@ export function Hero() {
 
       <motion.div
         style={isDesktop ? { y: contentY, opacity: contentOpacity } : undefined}
-        className="relative z-10 flex h-full flex-col items-end justify-end px-6 pb-20 text-right sm:px-10 sm:pb-28 lg:px-16"
+        className="relative z-10 flex h-full flex-col items-end justify-end px-6 pb-8 text-right sm:px-10 sm:pb-28 lg:px-16"
       >
         <h1 className="sr-only">Cortina — Blue Ridge Mountains, North Carolina</h1>
         <span className="text-[11px] uppercase tracking-[0.35em] text-brass-soft sm:text-xs">
@@ -94,7 +94,7 @@ export function Hero() {
         </p>
       </motion.div>
 
-      <div className="absolute inset-x-0 bottom-6 z-10 flex justify-center">
+      <div className="absolute inset-x-0 bottom-6 z-10 hidden justify-center sm:flex">
         <motion.div
           style={isDesktop ? { opacity: contentOpacity } : undefined}
           className="h-10 w-px bg-paper/30"
