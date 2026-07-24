@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useSyncExternalStore } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { PhotoFrame } from "@/components/photo-frame";
 
@@ -8,6 +8,19 @@ const HERO_IMAGE = "/images/cortina-upscaled.png";
 // Drop a stitched clip at /public/video/hero.mp4 and pass its path here to
 // swap the static hero image for a looping ambient background video.
 const HERO_VIDEO: string | undefined = undefined;
+
+const DESKTOP_QUERY = "(min-width: 640px)";
+function subscribeDesktopQuery(callback: () => void) {
+  const query = window.matchMedia(DESKTOP_QUERY);
+  query.addEventListener("change", callback);
+  return () => query.removeEventListener("change", callback);
+}
+function getIsDesktop() {
+  return window.matchMedia(DESKTOP_QUERY).matches;
+}
+function getIsDesktopServerSnapshot() {
+  return false;
+}
 
 export function Hero() {
   const ref = useRef<HTMLElement>(null);
@@ -20,13 +33,25 @@ export function Hero() {
   const contentY = useTransform(scrollYProgress, [0, 1], ["0%", "40%"]);
   const contentOpacity = useTransform(scrollYProgress, [0, 0.7], [1, 0]);
 
+  // Scroll-linked parallax is a common source of jank on mobile browsers
+  // (viewport-unit shifts as the address bar collapses, choppier scroll
+  // timing) — keep it desktop-only and render the hero static on mobile.
+  const isDesktop = useSyncExternalStore(
+    subscribeDesktopQuery,
+    getIsDesktop,
+    getIsDesktopServerSnapshot
+  );
+
   return (
     <section
       id="top"
       ref={ref}
-      className="relative h-[100svh] min-h-[560px] w-full overflow-hidden"
+      className="relative aspect-square min-h-[480px] w-full overflow-hidden sm:aspect-auto sm:h-[100svh] sm:min-h-[560px]"
     >
-      <motion.div style={{ y: imageY }} className="absolute inset-0 h-[120%]">
+      <motion.div
+        style={isDesktop ? { y: imageY } : undefined}
+        className="absolute inset-0 h-[120%]"
+      >
         {HERO_VIDEO ? (
           <div className="grain-overlay relative h-full w-full overflow-hidden">
             <video
@@ -47,6 +72,7 @@ export function Hero() {
             className="h-full w-full"
             priority
             scrim="bottom"
+            objectPosition="42% center"
           />
         )}
       </motion.div>
@@ -55,7 +81,7 @@ export function Hero() {
       <div className="pointer-events-none absolute inset-x-0 bottom-0 z-[5] h-96 bg-gradient-to-t from-ink/90 via-ink/40 to-transparent" />
 
       <motion.div
-        style={{ y: contentY, opacity: contentOpacity }}
+        style={isDesktop ? { y: contentY, opacity: contentOpacity } : undefined}
         className="relative z-10 flex h-full flex-col items-end justify-end px-6 pb-20 text-right sm:px-10 sm:pb-28 lg:px-16"
       >
         <h1 className="sr-only">Cortina — Blue Ridge Mountains, North Carolina</h1>
@@ -70,7 +96,7 @@ export function Hero() {
 
       <div className="absolute inset-x-0 bottom-6 z-10 flex justify-center">
         <motion.div
-          style={{ opacity: contentOpacity }}
+          style={isDesktop ? { opacity: contentOpacity } : undefined}
           className="h-10 w-px bg-paper/30"
         />
       </div>
