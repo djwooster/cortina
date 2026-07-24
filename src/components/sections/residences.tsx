@@ -5,18 +5,17 @@ import { PhotoFrame } from "@/components/photo-frame";
 import { ScrollReveal } from "@/components/scroll-reveal";
 
 const RESIDENCES = [
-  { index: "01", src: "/images/residence-tofana.jpeg" },
-  { index: "02", src: "/images/residence-faloria.jpeg" },
-  { index: "03", src: "/images/residence-cristallo.jpeg" },
-  { index: "04", src: "/images/residence-sorapis-interior.jpeg" },
-  { index: "05", src: "/images/residence-pomagagnon.jpeg" },
-  { index: "06", src: "/images/residence-averau.jpeg" },
+  { index: "01", src: "/images/residence-01-1600.webp" },
+  { index: "02", src: "/images/residence-02-1600.webp" },
+  { index: "03", src: "/images/residence-03-1600.webp" },
+  { index: "04", src: "/images/residence-04-1600.webp" },
+  { index: "05", src: "/images/residence-05-1600.webp" },
+  { index: "06", src: "/images/residence-06-1600.webp" },
 ] as const;
 
 const STATS = [
   { value: "22", label: "Homes" },
   { value: "36", label: "Acres" },
-  { value: "$1.5M–$2.0M", label: "Investment" },
 ];
 
 export function Residences() {

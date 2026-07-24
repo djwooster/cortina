@@ -52,10 +52,10 @@ export function SitePlan() {
             y={40}
           >
             <Image
-              src="/images/drawing.png"
-              alt="Illustrated site plan of the Cortina development, showing twenty-two numbered homesites along Ivywood Road and Morgan Branch Creek"
-              width={650}
-              height={819}
+              src="/images/cool-rendering-2.png"
+              alt="Architectural rendering of a Cortina residence with floor plan and elevation studies"
+              width={1024}
+              height={1536}
               className="h-auto w-full max-w-2xl"
             />
           </ScrollReveal>

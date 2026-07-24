@@ -35,11 +35,11 @@ export function Setting() {
       <ScrollReveal className="mt-14" y={40}>
         <div
           ref={ref}
-          className="h-[60vh] min-h-[380px] w-full overflow-hidden"
+          className="h-[80vh] min-h-[520px] w-full overflow-hidden"
         >
           <motion.div style={{ scale }} className="h-full w-full">
             <PhotoFrame
-              src="/images/figma-upscale-2.png"
+              src="/images/modern-home-hero-1920.webp"
               alt="A Cortina residence nestled among dense forest on the mountainside"
               className="h-full w-full"
             />

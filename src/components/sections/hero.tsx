@@ -4,7 +4,7 @@ import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { PhotoFrame } from "@/components/photo-frame";
 
-const HERO_IMAGE = "/images/reso-boost-figma.png";
+const HERO_IMAGE = "/images/cortina-upscaled.png";
 // Drop a stitched clip at /public/video/hero.mp4 and pass its path here to
 // swap the static hero image for a looping ambient background video.
 const HERO_VIDEO: string | undefined = undefined;
@@ -43,7 +43,7 @@ export function Hero() {
         ) : (
           <PhotoFrame
             src={HERO_IMAGE}
-            alt="A Cortina residence framed by trees in the Blue Ridge mountains"
+            alt="The Cortina entrance sign at dusk, backed by mountains and forest"
             className="h-full w-full"
             priority
             scrim="bottom"
@@ -52,20 +52,19 @@ export function Hero() {
       </motion.div>
 
       <div className="pointer-events-none absolute inset-x-0 top-0 z-[5] h-56 bg-gradient-to-b from-ink/70 to-transparent" />
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-[5] h-96 bg-gradient-to-t from-ink/90 via-ink/40 to-transparent" />
 
       <motion.div
         style={{ y: contentY, opacity: contentOpacity }}
-        className="relative z-10 flex h-full flex-col items-start justify-end px-6 pb-20 sm:px-10 sm:pb-28 lg:px-16"
+        className="relative z-10 flex h-full flex-col items-end justify-end px-6 pb-20 text-right sm:px-10 sm:pb-28 lg:px-16"
       >
-        <span className="mb-5 text-[11px] uppercase tracking-[0.35em] text-brass-soft sm:text-xs">
+        <h1 className="sr-only">Cortina — Blue Ridge Mountains, North Carolina</h1>
+        <span className="text-[11px] uppercase tracking-[0.35em] text-brass-soft sm:text-xs">
           Blue Ridge Mountains, North Carolina
         </span>
-        <h1 className="font-display text-6xl leading-[0.95] tracking-tight text-paper sm:text-8xl lg:text-[9rem]">
-          Cortina
-        </h1>
-        <div className="mt-7 h-px w-16 bg-brass" />
-        <p className="mt-6 max-w-md text-sm text-paper/75 sm:text-base">
-          Twenty-two residences. Thirty-six acres. A village apart.
+        <div className="mt-3 h-px w-16 bg-brass" />
+        <p className="mt-3 max-w-lg font-display text-2xl leading-snug text-paper sm:text-3xl">
+          Twenty-two residences. Thirty-six acres.
         </p>
       </motion.div>
 

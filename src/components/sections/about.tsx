@@ -11,14 +11,16 @@ export function About() {
           </span>
           <div className="mt-5 h-px w-10 bg-brass/50" />
         </ScrollReveal>
-        <div className="mt-8 grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16">
-          <ScrollReveal delay={0.1}>
+        <div className="mt-8 grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-10">
+          <ScrollReveal delay={0.1} className="lg:col-span-7">
             <h2 className="font-display text-4xl leading-[1.1] tracking-tight text-ink sm:text-5xl">
-              A village drawn from the Dolomites, set in the Blue Ridge.
+              Drawn from the Dolomites,
+              <br />
+              set in the Blue Ridge.
             </h2>
           </ScrollReveal>
-          <ScrollReveal delay={0.2}>
-            <p className="max-w-md text-base text-ink-soft sm:text-lg">
+          <ScrollReveal delay={0.2} className="lg:col-span-5">
+            <p className="max-w-md font-display text-xl italic leading-snug text-ink-soft sm:text-2xl">
               Cortina reinterprets the architecture of Cortina d&rsquo;Ampezzo
               across thirty-six acres of North Carolina mountainside —
               twenty-two homes, one point of view.
@@ -28,27 +30,21 @@ export function About() {
       </div>
 
       <ScrollReveal
-        className="mt-14 grid grid-cols-1 gap-2 sm:mt-20 sm:grid-cols-3 sm:gap-3"
+        className="mt-14 grid grid-cols-1 gap-2 sm:mt-20 sm:grid-cols-2 sm:gap-3"
         delay={0.15}
         y={40}
       >
         <PhotoFrame
-          src="/images/about-main.jpeg"
-          alt="A Cortina residence at dusk, black-clad and set among autumn hardwoods"
+          src="/images/residence-07-1600.webp"
+          alt="A Cortina residence with a stone chimney, set against dense forest"
           className="aspect-[3/4] w-full"
-          sizes="(min-width: 640px) 34vw, 100vw"
+          sizes="(min-width: 640px) 50vw, 100vw"
         />
         <PhotoFrame
-          src="/images/about-inset-sign.jpeg"
-          alt="The Cortina entrance sign at dusk"
+          src="/images/residence-08-1600.webp"
+          alt="A Cortina residence entrance at dusk, wood and white facade"
           className="aspect-[3/4] w-full"
-          sizes="(min-width: 640px) 34vw, 100vw"
-        />
-        <PhotoFrame
-          src="/images/about-secondary.jpeg"
-          alt="A Cortina residence exterior at twilight"
-          className="aspect-[3/4] w-full"
-          sizes="(min-width: 640px) 34vw, 100vw"
+          sizes="(min-width: 640px) 50vw, 100vw"
         />
       </ScrollReveal>
     </section>
