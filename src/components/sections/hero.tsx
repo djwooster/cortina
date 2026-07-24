@@ -46,7 +46,7 @@ export function Hero() {
     <section
       id="top"
       ref={ref}
-      className="relative aspect-square min-h-[480px] w-full overflow-hidden sm:aspect-auto sm:h-[100svh] sm:min-h-[560px]"
+      className="relative h-[100svh] min-h-[480px] w-full overflow-hidden"
     >
       <motion.div
         style={isDesktop ? { y: imageY } : undefined}
@@ -72,7 +72,8 @@ export function Hero() {
             className="h-full w-full"
             priority
             scrim="bottom"
-            objectPosition="42% center"
+            objectPosition="38% center"
+            imageClassName="scale-110 origin-bottom sm:scale-100 sm:origin-center"
           />
         )}
       </motion.div>

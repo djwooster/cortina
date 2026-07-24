@@ -9,6 +9,7 @@ interface PhotoFrameProps {
   scrim?: "bottom" | "none";
   sizes?: string;
   objectPosition?: string;
+  imageClassName?: string;
 }
 
 export function PhotoFrame({
@@ -19,6 +20,7 @@ export function PhotoFrame({
   scrim = "none",
   sizes = "100vw",
   objectPosition,
+  imageClassName,
 }: PhotoFrameProps) {
   return (
     <div className={cn("grain-overlay relative isolate overflow-hidden", className)}>
@@ -28,7 +30,7 @@ export function PhotoFrame({
         fill
         priority={priority}
         sizes={sizes}
-        className="object-cover"
+        className={cn("object-cover", imageClassName)}
         style={objectPosition ? { objectPosition } : undefined}
       />
       {scrim === "bottom" && (
