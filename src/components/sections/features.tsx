@@ -95,13 +95,11 @@ export function Features() {
                 key={r}
                 cx={CENTER.x}
                 cy={CENTER.y}
-                r={r}
                 fill="none"
                 stroke="currentColor"
                 strokeWidth={1}
-                style={{ transformOrigin: `${CENTER.x}px ${CENTER.y}px` }}
-                initial={{ scale: 0, opacity: 0 }}
-                whileInView={{ scale: [0, 1.08, 1], opacity: [0, 0.22, 0.15] }}
+                initial={{ r: 0, opacity: 0 }}
+                whileInView={{ r: [0, r * 1.08, r], opacity: [0, 0.22, 0.15] }}
                 viewport={{ once: true, margin: "-10% 0px -10% 0px" }}
                 transition={{
                   duration: 1.1,
@@ -165,11 +163,9 @@ export function Features() {
             <motion.circle
               cx={CENTER.x}
               cy={CENTER.y}
-              r={5}
               fill="currentColor"
-              style={{ transformOrigin: `${CENTER.x}px ${CENTER.y}px` }}
-              initial={{ scale: 1, opacity: 0.5 }}
-              animate={{ scale: [1, 3], opacity: [0.5, 0] }}
+              initial={{ r: 5, opacity: 0.5 }}
+              animate={{ r: [5, 15], opacity: [0.5, 0] }}
               transition={{
                 duration: 2.2,
                 repeat: Infinity,
@@ -190,14 +186,14 @@ export function Features() {
             {ROUTE_ENDPOINTS.map((end, i) => (
               <motion.g
                 key={end.label}
-                style={{ transformOrigin: `${end.x}px ${end.y}px` }}
-                initial={{ opacity: 0, scale: 0.4 }}
-                whileInView={{ opacity: 1, scale: 1 }}
+                initial={{ opacity: 0, y: 8 }}
+                whileInView={{ opacity: [0, 1, 1], y: [8, -2, 0] }}
                 viewport={{ once: true }}
                 transition={{
                   duration: 0.7,
                   delay: 1.1 + i * 0.15,
-                  ease: [0.34, 1.56, 0.64, 1],
+                  ease: [0.16, 1, 0.3, 1],
+                  times: [0, 0.7, 1],
                 }}
               >
                 <circle cx={end.x} cy={end.y} r={2.5} className="fill-paper/60" />
