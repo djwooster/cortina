@@ -16,14 +16,14 @@ export function About() {
             <h2 className="font-display text-4xl leading-[1.1] tracking-tight text-ink sm:text-5xl">
               Drawn from the Dolomites,
               <br />
-              set in the Blue Ridge.
+              set in Weaverville.
             </h2>
           </ScrollReveal>
           <ScrollReveal delay={0.2} className="lg:col-span-5">
             <p className="max-w-md font-display text-xl italic leading-snug text-ink-soft sm:text-2xl">
               Cortina reinterprets the architecture of Cortina d&rsquo;Ampezzo
-              across thirty-six acres of North Carolina mountainside —
-              twenty-two homes, one point of view.
+              across thirty-seven acres of North Carolina mountainside —
+              one point of view.
             </p>
           </ScrollReveal>
         </div>

@@ -9,20 +9,11 @@ const LINKS = [
   { href: "#residences", label: "Residences" },
   { href: "#interiors", label: "Inside" },
   { href: "#plan", label: "Plan" },
-  { href: "#setting", label: "Setting" },
   { href: "#contact", label: "Inquire" },
 ];
 
 export function SiteHeader() {
-  const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 64);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
 
   useEffect(() => {
     if (menuOpen) {
@@ -34,27 +25,19 @@ export function SiteHeader() {
     }
   }, [menuOpen]);
 
-  const lightText = !scrolled && !menuOpen;
-
   return (
     <>
       <motion.header
         initial={{ opacity: 0, y: -12 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-        className={`fixed inset-x-0 top-0 z-50 border-b transition-colors duration-500 ${
-          scrolled || menuOpen
-            ? "bg-paper/95 border-brass/30"
-            : "bg-transparent border-transparent"
-        }`}
+        className="fixed inset-x-0 top-0 z-50 border-b border-brass/30 bg-ink"
       >
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5 sm:px-10">
           <a
             href="#top"
             onClick={() => setMenuOpen(false)}
-            className={`flex items-center gap-2.5 font-display text-base tracking-[0.25em] transition-colors duration-500 ${
-              lightText ? "text-paper" : "text-ink"
-            }`}
+            className="flex items-center gap-2.5 font-display text-base tracking-[0.25em] text-paper"
           >
             <LogoMark className="h-5 w-auto" />
             CORTINA
@@ -65,9 +48,7 @@ export function SiteHeader() {
               <a
                 key={link.href}
                 href={link.href}
-                className={`text-[11px] uppercase tracking-[0.2em] transition-colors duration-500 hover:text-brass ${
-                  lightText ? "text-paper" : "text-ink"
-                }`}
+                className="text-[11px] uppercase tracking-[0.2em] text-paper transition-colors duration-500 hover:text-brass"
               >
                 {link.label}
               </a>
@@ -79,9 +60,7 @@ export function SiteHeader() {
             aria-label={menuOpen ? "Close menu" : "Open menu"}
             aria-expanded={menuOpen}
             onClick={() => setMenuOpen((open) => !open)}
-            className={`-mr-2 p-2 transition-colors duration-500 sm:hidden ${
-              lightText ? "text-paper" : "text-ink"
-            }`}
+            className="-mr-2 p-2 text-paper sm:hidden"
           >
             {menuOpen ? <X size={22} /> : <Menu size={22} />}
           </button>

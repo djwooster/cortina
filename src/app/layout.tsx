@@ -14,9 +14,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Cortina — North Carolina Mountains",
+  title: "Cortina — Weaverville, North Carolina",
   description:
-    "Twenty-two European-inspired residences on 36 acres in the North Carolina mountains.",
+    "European-inspired residences on 37 acres in Weaverville, North Carolina.",
 };
 
 export default function RootLayout({

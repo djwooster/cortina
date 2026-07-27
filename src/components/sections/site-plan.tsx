@@ -21,7 +21,7 @@ export function SitePlan() {
             </ScrollReveal>
             <ScrollReveal delay={0.1}>
               <h2 className="mt-8 font-display text-4xl leading-[1.1] tracking-tight text-ink sm:text-5xl">
-                Twenty-two homesites along Morgan Branch Creek.
+                Homesites along Morgan Branch Creek.
               </h2>
             </ScrollReveal>
             <ScrollReveal delay={0.2}>

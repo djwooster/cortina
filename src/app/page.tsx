@@ -5,7 +5,6 @@ import { About } from "@/components/sections/about";
 import { Residences } from "@/components/sections/residences";
 import { Interiors } from "@/components/sections/interiors";
 import { SitePlan } from "@/components/sections/site-plan";
-import { Setting } from "@/components/sections/setting";
 import { Contact } from "@/components/sections/contact";
 
 export default function Home() {
@@ -18,7 +17,6 @@ export default function Home() {
         <Residences />
         <Interiors />
         <SitePlan />
-        <Setting />
         <Contact />
       </main>
       <SiteFooter />

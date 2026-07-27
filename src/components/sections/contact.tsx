@@ -18,7 +18,7 @@ export function Contact() {
             Inquire
           </span>
           <h2 className="mt-4 font-display text-4xl leading-[1.1] tracking-tight text-paper sm:text-5xl">
-            Twenty-two homes. A limited few remain.
+            A limited few homes remain.
           </h2>
         </ScrollReveal>
 

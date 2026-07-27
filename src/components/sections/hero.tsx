@@ -91,7 +91,6 @@ export function Hero() {
         )}
       </motion.div>
 
-      <div className="pointer-events-none absolute inset-x-0 top-0 z-[5] h-56 bg-gradient-to-b from-ink/70 to-transparent" />
       <div className="pointer-events-none absolute inset-x-0 bottom-0 z-[5] h-96 bg-gradient-to-t from-ink/90 via-ink/40 to-transparent" />
 
       <motion.div
@@ -99,14 +98,14 @@ export function Hero() {
         className="relative z-10 flex h-full flex-col items-end justify-end px-6 pb-8 text-right sm:px-10 sm:pb-28 lg:px-16"
       >
         <h1 className="sr-only">
-          Cortina — Blue Ridge Mountains, North Carolina
+          Cortina — Weaverville, North Carolina
         </h1>
         <span className="text-[9px] uppercase tracking-[0.2em] text-brass-soft sm:text-xs sm:tracking-[0.35em]">
-          Blue Ridge Mountains, North Carolina
+          Weaverville, North Carolina
         </span>
         <div className="mt-3 h-px w-16 bg-brass" />
         <p className="mt-3 max-w-lg font-display text-lg leading-snug text-paper sm:text-3xl">
-          Twenty-two residences. Thirty-six acres.
+          Thirty-seven acres of mountainside.
         </p>
       </motion.div>
 

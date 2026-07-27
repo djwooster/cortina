@@ -9,7 +9,7 @@ export function SiteFooter() {
           CORTINA
         </span>
         <p className="text-xs text-paper/40">
-          © {new Date().getFullYear()} Cortina. North Carolina mountains.
+          © {new Date().getFullYear()} Cortina. Weaverville, North Carolina.
         </p>
       </div>
     </footer>
