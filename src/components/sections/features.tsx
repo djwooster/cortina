@@ -99,7 +99,7 @@ export function Features() {
                 stroke="currentColor"
                 strokeWidth={1}
                 initial={{ r: 0, opacity: 0 }}
-                whileInView={{ r: [0, r * 1.08, r], opacity: [0, 0.22, 0.15] }}
+                whileInView={{ r: [0, r * 1.08, r], opacity: [0, 0.32, 0.26] }}
                 viewport={{ once: true, margin: "-10% 0px -10% 0px" }}
                 transition={{
                   duration: 1.1,
