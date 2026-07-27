@@ -99,7 +99,7 @@ export function Features() {
                 fill="none"
                 stroke="currentColor"
                 strokeWidth={1}
-                style={{ originX: 0.5, originY: 0.5 }}
+                style={{ transformOrigin: `${CENTER.x}px ${CENTER.y}px` }}
                 initial={{ scale: 0, opacity: 0 }}
                 whileInView={{ scale: [0, 1.08, 1], opacity: [0, 0.22, 0.15] }}
                 viewport={{ once: true, margin: "-10% 0px -10% 0px" }}
@@ -167,7 +167,7 @@ export function Features() {
               cy={CENTER.y}
               r={5}
               fill="currentColor"
-              style={{ originX: 0.5, originY: 0.5 }}
+              style={{ transformOrigin: `${CENTER.x}px ${CENTER.y}px` }}
               initial={{ scale: 1, opacity: 0.5 }}
               animate={{ scale: [1, 3], opacity: [0.5, 0] }}
               transition={{
@@ -190,7 +190,7 @@ export function Features() {
             {ROUTE_ENDPOINTS.map((end, i) => (
               <motion.g
                 key={end.label}
-                style={{ originX: 0.5, originY: 0.5 }}
+                style={{ transformOrigin: `${end.x}px ${end.y}px` }}
                 initial={{ opacity: 0, scale: 0.4 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
