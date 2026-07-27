@@ -3,7 +3,7 @@ import { ScrollReveal } from "@/components/scroll-reveal";
 
 export function About() {
   return (
-    <section className="py-28 sm:py-36">
+    <section className="pt-28 sm:pt-36">
       <div className="mx-auto max-w-6xl px-6 sm:px-10 lg:px-16">
         <ScrollReveal>
           <span className="text-[11px] uppercase tracking-[0.35em] text-brass">
