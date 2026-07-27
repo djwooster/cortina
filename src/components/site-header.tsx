@@ -6,6 +6,7 @@ import { Menu, X } from "lucide-react";
 import { LogoMark } from "@/components/logo-mark";
 
 const LINKS = [
+  { href: "#reach", label: "Reach" },
   { href: "#residences", label: "Residences" },
   { href: "#interiors", label: "Inside" },
   { href: "#plan", label: "Plan" },

@@ -1,14 +1,7 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-import {
-  animate,
-  motion,
-  useInView,
-  useMotionValue,
-  useMotionValueEvent,
-  useTransform,
-} from "framer-motion";
+import { motion } from "framer-motion";
+import { AnimatedNumber } from "@/components/animated-number";
 import { PhotoFrame } from "@/components/photo-frame";
 import { ScrollReveal } from "@/components/scroll-reveal";
 
@@ -22,27 +15,6 @@ const RESIDENCES = [
 ] as const;
 
 const ACRES = 37;
-
-function AnimatedAcreage({ value }: { value: number }) {
-  const ref = useRef<HTMLSpanElement>(null);
-  const isInView = useInView(ref, { once: true, margin: "-10% 0px -10% 0px" });
-  const count = useMotionValue(0);
-  const rounded = useTransform(count, (v) => Math.round(v));
-  const [display, setDisplay] = useState(0);
-
-  useMotionValueEvent(rounded, "change", setDisplay);
-
-  useEffect(() => {
-    if (!isInView) return;
-    const controls = animate(count, value, {
-      duration: 1.4,
-      ease: [0.16, 1, 0.3, 1],
-    });
-    return controls.stop;
-  }, [isInView, value, count]);
-
-  return <span ref={ref}>{display}</span>;
-}
 
 export function Residences() {
   return (
@@ -58,7 +30,7 @@ export function Residences() {
           <div className="mt-7 h-px w-16 bg-brass/50" />
           <div className="mt-5 flex items-end gap-4">
             <span className="font-display text-6xl leading-none tabular-nums text-ink sm:text-7xl">
-              <AnimatedAcreage value={ACRES} />
+              <AnimatedNumber value={ACRES} />
             </span>
             <span className="mb-1 text-[10px] uppercase leading-[1.6] tracking-[0.3em] text-ink-soft/70">
               Acres of
