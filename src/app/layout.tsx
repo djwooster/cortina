@@ -14,9 +14,23 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://cortinanc.com"),
   title: "Cortina — Weaverville, North Carolina",
   description:
     "European-inspired residences on 37 acres in Weaverville, North Carolina.",
+  openGraph: {
+    title: "Cortina — Weaverville, North Carolina",
+    description:
+      "European-inspired residences on 37 acres in Weaverville, North Carolina.",
+    siteName: "Cortina",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Cortina — Weaverville, North Carolina",
+    description:
+      "European-inspired residences on 37 acres in Weaverville, North Carolina.",
+  },
 };
 
 export default function RootLayout({
