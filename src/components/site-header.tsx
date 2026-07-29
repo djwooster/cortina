@@ -3,14 +3,16 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import Link from "next/link";
 import { LogoMark } from "@/components/logo-mark";
 
 const LINKS = [
-  { href: "#reach", label: "Reach" },
-  { href: "#residences", label: "Residences" },
-  { href: "#interiors", label: "Inside" },
-  { href: "#plan", label: "Plan" },
-  { href: "#contact", label: "Inquire" },
+  { href: "/#reach", label: "Reach" },
+  { href: "/#residences", label: "Residences" },
+  { href: "/#interiors", label: "Inside" },
+  { href: "/#plan", label: "Plan" },
+  { href: "/blueprints", label: "Blueprints" },
+  { href: "/#contact", label: "Inquire" },
 ];
 
 export function SiteHeader() {
@@ -35,14 +37,14 @@ export function SiteHeader() {
         className="fixed inset-x-0 top-0 z-50 border-b border-brass/30 bg-ink"
       >
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5 sm:px-10">
-          <a
-            href="#top"
+          <Link
+            href="/#top"
             onClick={() => setMenuOpen(false)}
             className="flex items-center gap-2.5 font-display text-base tracking-[0.25em] text-paper"
           >
             <LogoMark className="h-5 w-auto" />
             CORTINA
-          </a>
+          </Link>
 
           <nav className="hidden items-center gap-8 sm:flex">
             {LINKS.map((link) => (
