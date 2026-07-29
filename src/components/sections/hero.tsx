@@ -97,14 +97,12 @@ export function Hero() {
         style={isDesktop ? { y: contentY, opacity: contentOpacity } : undefined}
         className="relative z-10 flex h-full flex-col items-end justify-end px-6 pb-8 text-right sm:px-10 sm:pb-28 lg:px-16"
       >
-        <h1 className="sr-only">
-          Cortina — Weaverville, North Carolina
-        </h1>
-        <span className="text-[9px] uppercase tracking-[0.2em] text-brass-soft sm:text-xs sm:tracking-[0.35em]">
+        <h1 className="sr-only">Cortina — Weaverville, North Carolina</h1>
+        <span className="text-[11px] uppercase tracking-[0.2em] text-brass-soft sm:text-xs sm:tracking-[0.35em]">
           Weaverville, North Carolina
         </span>
         <div className="mt-3 h-px w-16 bg-brass" />
-        <p className="mt-3 max-w-lg font-display text-lg leading-snug text-paper sm:text-3xl">
+        <p className="mt-3 max-w-lg font-display text-2xl leading-snug text-paper sm:text-3xl">
           Thirty-seven acres of mountainside.
         </p>
       </motion.div>
