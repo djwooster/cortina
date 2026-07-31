@@ -1,14 +1,13 @@
+import { readFile } from "node:fs/promises";
+import { join } from "node:path";
 import { ImageResponse } from "next/og";
 
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
-const LIBRE_CASLON_DISPLAY_WOFF_URL =
-  "https://fonts.gstatic.com/s/librecaslondisplay/v18/TuGOUUFxWphYQ6YI6q9Xp61FQzxDRKmzr2lS.woff";
-
 export default async function OpengraphImage() {
-  const fontData = await fetch(LIBRE_CASLON_DISPLAY_WOFF_URL).then((res) =>
-    res.arrayBuffer(),
+  const fontData = await readFile(
+    join(process.cwd(), "src/app/fonts/libre-caslon-display.woff"),
   );
 
   return new ImageResponse(
