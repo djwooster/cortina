@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { Resend } from "resend";
 
 const CONTACT_TO = "federico@cortinanc.com";
-const CONTACT_FROM = "Cortina <federico@cortinanc.com>";
+const CONTACT_FROM = "Cortina <inquiries@cortinanc.com>";
 
 export async function POST(request: Request) {
   const { name, email, message } = await request.json();
