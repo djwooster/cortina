@@ -1,4 +1,6 @@
 import Image from "next/image";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
 import { ScrollReveal } from "@/components/scroll-reveal";
 
 const DETAILS = [
@@ -44,6 +46,15 @@ export function SitePlan() {
                 </ScrollReveal>
               ))}
             </dl>
+
+            <ScrollReveal delay={0.4}>
+              <Button
+                asChild
+                className="mt-10 w-fit bg-brass text-ink hover:bg-brass-soft"
+              >
+                <Link href="/blueprints">View the Blueprints</Link>
+              </Button>
+            </ScrollReveal>
           </div>
 
           <ScrollReveal

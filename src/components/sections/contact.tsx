@@ -9,6 +9,8 @@ import { ScrollReveal } from "@/components/scroll-reveal";
 
 export function Contact() {
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   return (
     <section id="contact" className="bg-ink py-28 sm:py-36">
@@ -29,9 +31,35 @@ export function Contact() {
             </p>
           ) : (
             <form
-              onSubmit={(e) => {
+              onSubmit={async (e) => {
                 e.preventDefault();
-                setSubmitted(true);
+                setError(null);
+                setSubmitting(true);
+
+                const formData = new FormData(e.currentTarget);
+                try {
+                  const res = await fetch("/api/contact", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({
+                      name: formData.get("name"),
+                      email: formData.get("email"),
+                      message: formData.get("message"),
+                    }),
+                  });
+
+                  if (!res.ok) {
+                    throw new Error("Request failed");
+                  }
+
+                  setSubmitted(true);
+                } catch {
+                  setError(
+                    "Something went wrong sending your message. Please try again.",
+                  );
+                } finally {
+                  setSubmitting(false);
+                }
               }}
               className="flex flex-col gap-5"
             >
@@ -71,11 +99,13 @@ export function Contact() {
                   className="border-paper/20 bg-transparent text-paper placeholder:text-paper/30 focus-visible:border-brass"
                 />
               </div>
+              {error && <p className="text-sm text-red-400">{error}</p>}
               <Button
                 type="submit"
-                className="mt-2 w-fit bg-brass text-ink hover:bg-brass-soft"
+                disabled={submitting}
+                className="mt-2 w-fit bg-brass text-ink hover:bg-brass-soft disabled:opacity-60"
               >
-                Request the brochure
+                {submitting ? "Sending..." : "Request the brochure"}
               </Button>
             </form>
           )}
