@@ -14,16 +14,17 @@ export function About() {
         <div className="mt-8 grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-10">
           <ScrollReveal delay={0.1} className="lg:col-span-7">
             <h2 className="font-display text-4xl leading-[1.1] tracking-tight text-ink sm:text-5xl">
-              Drawn from the Dolomites,
+              A vision from
               <br />
-              set in Weaverville.
+              Federico Citoni.
             </h2>
           </ScrollReveal>
           <ScrollReveal delay={0.2} className="lg:col-span-5">
-            <p className="max-w-md font-display text-xl italic leading-snug text-ink-soft sm:text-2xl">
-              Cortina reinterprets the architecture of Cortina d&rsquo;Ampezzo
-              across thirty-seven acres of North Carolina mountainside —
-              one point of view.
+            <p className="max-w-lg font-display text-xl italic leading-snug text-ink-soft sm:text-2xl">
+              He grew up in the mountains near Cortina d&rsquo;Ampezzo, and
+              never forgot the alpine light, the pine air, the hush after
+              snowfall. Weaverville felt like the same place, wearing a
+              different name, so he built Cortina to carry it home.
             </p>
           </ScrollReveal>
         </div>
