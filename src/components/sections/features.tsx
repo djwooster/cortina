@@ -186,17 +186,29 @@ export function Features() {
             {ROUTE_ENDPOINTS.map((end, i) => (
               <motion.g
                 key={end.label}
-                initial={{ opacity: 0, y: 8 }}
-                whileInView={{ opacity: [0, 1, 1], y: [8, -2, 0] }}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{
                   duration: 0.7,
                   delay: 1.1 + i * 0.15,
                   ease: [0.16, 1, 0.3, 1],
-                  times: [0, 0.7, 1],
                 }}
               >
-                <circle cx={end.x} cy={end.y} r={2.5} className="fill-paper/60" />
+                <motion.circle
+                  cx={end.x}
+                  cy={end.y}
+                  className="fill-paper/60"
+                  initial={{ r: 0 }}
+                  whileInView={{ r: [0, 3.5, 2.5] }}
+                  viewport={{ once: true }}
+                  transition={{
+                    duration: 0.7,
+                    delay: 1.1 + i * 0.15,
+                    ease: [0.16, 1, 0.3, 1],
+                    times: [0, 0.7, 1],
+                  }}
+                />
                 <text
                   x={end.x}
                   y={end.y - 8}
