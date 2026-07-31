@@ -50,7 +50,7 @@ export function SitePlan() {
             <ScrollReveal delay={0.4}>
               <Button
                 asChild
-                className="mt-10 w-fit bg-brass text-ink hover:bg-brass-soft"
+                className="mt-10 h-auto w-fit bg-ink px-5 py-3 text-paper hover:bg-ink/80"
               >
                 <Link href="/blueprints">View the Blueprints</Link>
               </Button>
