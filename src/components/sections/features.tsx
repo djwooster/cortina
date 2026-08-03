@@ -25,11 +25,17 @@ const PINS = [
 const ROUTES = [
   { to: "New York", d: "M381,189 Q460,100 420,32" },
   { to: "Miami", d: "M381,189 Q460,300 430,428" },
+  { to: "Knoxville", d: "M381,189 Q200,80 50,170" },
+  { to: "Johnson City", d: "M381,189 Q250,40 95,90" },
+  { to: "Jacksonville", d: "M381,189 Q400,350 300,460" },
 ];
 
 const ROUTE_ENDPOINTS = [
   { label: "New York", x: 420, y: 32 },
   { label: "Miami", x: 430, y: 428 },
+  { label: "Knoxville", x: 50, y: 170 },
+  { label: "Johnson City", x: 95, y: 90 },
+  { label: "Jacksonville", x: 300, y: 460 },
 ];
 
 export function Features() {
